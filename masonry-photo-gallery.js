@@ -106,6 +106,7 @@
                                 label={ __( 'Utiliser le tri manuel', 'masonry-photo-gallery' ) }
                                 checked={ manual }
                                 onChange={ ( val ) => setAttributes( { manual: val } ) }
+                                __nextHasNoMarginBottom={ true }
                             />
                             <RangeControl
                                 label={ __( 'Colonnes', 'masonry-photo-gallery' ) }
