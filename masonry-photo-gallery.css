@@ -1,0 +1,42 @@
+/* Style principal pour Masonry Photo Gallery */
+
+.masonry-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(-1 * var(--mpg-gutter) / 2);
+}
+
+.masonry-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.masonry-item {
+    box-sizing: border-box;
+    padding: calc(var(--mpg-gutter) / 2);
+    width: calc(100% / var(--mpg-columns));
+}
+
+/* Meta box */
+#mpg-container ul.masonry-images {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+#mpg-container li.mpg-image {
+    position: relative;
+    float: left;
+    margin: 0 5px 5px 0;
+}
+#mpg-container li.mpg-image img {
+    display: block;
+}
+#mpg-container .mpg-remove {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+}
+
