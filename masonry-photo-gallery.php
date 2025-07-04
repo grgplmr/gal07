@@ -23,6 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'MPG_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MPG_URL', plugin_dir_url( __FILE__ ) );
 
+// Chargement du fichier de traduction.
+function mpg_load_textdomain() {
+    load_plugin_textdomain( 'masonry-photo-gallery', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+add_action( 'init', 'mpg_load_textdomain' );
+
 // Enregistrement du Custom Post Type.
 function mpg_register_cpt() {
     $labels = [
