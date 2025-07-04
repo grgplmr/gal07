@@ -130,7 +130,7 @@ add_action( 'save_post_masonry_gallery', 'mpg_save_post' );
 function mpg_enqueue_scripts() {
     wp_enqueue_style( 'masonry-photo-gallery', MPG_URL . 'masonry-photo-gallery.css', [], '1.0.0' );
     wp_enqueue_script( 'masonry' );
-    wp_enqueue_script( 'masonry-photo-gallery', MPG_URL . 'masonry-photo-gallery.js', [ 'jquery', 'imagesloaded', 'masonry' ], '1.0.0', true );
+    wp_enqueue_script( 'masonry-photo-gallery', MPG_URL . 'build/masonry-photo-gallery.js', [ 'jquery', 'imagesloaded', 'masonry' ], '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'mpg_enqueue_scripts' );
 
@@ -145,7 +145,7 @@ function mpg_admin_scripts( $hook ) {
     }
     wp_enqueue_media();
     wp_enqueue_script( 'jquery-ui-sortable' );
-    wp_enqueue_script( 'mpg-admin', MPG_URL . 'masonry-photo-gallery.js', [ 'jquery', 'jquery-ui-sortable' ], '1.0.0', true );
+    wp_enqueue_script( 'mpg-admin', MPG_URL . 'build/masonry-photo-gallery.js', [ 'jquery', 'jquery-ui-sortable' ], '1.0.0', true );
     wp_localize_script( 'mpg-admin', 'mpg_gallery', [
         'select' => __( 'Select images', 'masonry-photo-gallery' ),
         'use'    => __( 'Use images', 'masonry-photo-gallery' ),
@@ -195,7 +195,7 @@ function mpg_register_block() {
         return;
     }
 
-    wp_register_script( 'mpg-block', MPG_URL . 'masonry-photo-gallery.js', [ 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-data', 'wp-block-editor', 'wp-i18n' ], '1.0.0', true );
+    wp_register_script( 'mpg-block', MPG_URL . 'build/masonry-photo-gallery.js', [ 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-data', 'wp-block-editor', 'wp-i18n' ], '1.0.0', true );
     wp_register_style( 'mpg-block-style', MPG_URL . 'masonry-photo-gallery.css', [], '1.0.0' );
 
     register_block_type( 'masonry/gallery', [
