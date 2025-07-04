@@ -1,0 +1,10 @@
+{
+  "name": "masonry-photo-gallery",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@wordpress/scripts": "^27.0.0"
+  },
+  "scripts": {
+    "build": "wp-scripts build src/masonry-photo-gallery.js --output-path=build --output-filename=masonry-photo-gallery.js"
+  }
+}
