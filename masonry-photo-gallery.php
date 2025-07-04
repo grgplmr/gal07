@@ -173,7 +173,8 @@ function mpg_gallery_shortcode( $atts ) {
     if ( empty( $ids ) ) {
         return '';
     }
-    if ( ! $atts['manual'] ) {
+    $manual = filter_var( $atts['manual'], FILTER_VALIDATE_BOOLEAN );
+    if ( ! $manual ) {
         sort( $ids );
     }
 
